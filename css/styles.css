@@ -1,0 +1,1321 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: var(--primary-color);
+    --accent-color: var(--primary-color);
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --card-bg: #fff;
+    --card-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    --border-radius: 20px;
+    --squircle-radius: 60px;
+    --heading-color: var(--primary-color);
+    --section-alt-bg: #f9f9f9;
+}
+
+[data-theme="dark"] {
+    --primary-color: #6BCF6F;
+    --secondary-color: var(--primary-color);
+    --accent-color: var(--primary-color);
+    --text-color: #f5f5f5;
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --card-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    --heading-color: var(--primary-color);
+    --section-alt-bg: #222222;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.school-logo {
+    height: 40px;
+    width: auto;
+}
+
+.school-name {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://chasingthedonkey.b-cdn.net/wp-content/uploads/2019/05/Kosovo-National-Parks_Bjeshke%CC%88t_Nemuna__Liqeni_i_madh_ne_Liqenat__Rugove.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-title {
+    font-size: 5rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    opacity: 0;
+    background: linear-gradient(
+        to right,
+        #2E7D32, /* Green */
+        #0D47A1, /* Dark Blue */
+        #FFD700, /* Yellow */
+        #2E7D32  /* Back to green */
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: 
+        fadeInUp 1s ease forwards,
+        titleColorChange 16s linear infinite;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleColorChange {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.squircle-container {
+    width: 80%;
+    max-width: 1200px;
+    aspect-ratio: 16/9;
+    border-radius: var(--squircle-radius);
+    overflow: hidden;
+    position: relative;
+    transform: perspective(1000px);
+    transition: transform 0.5s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.squircle-container:hover {
+    transform: perspective(1000px) rotateX(5deg) scale(1.02);
+}
+
+.squircle-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.squircle-container:hover img {
+    transform: scale(1.1);
+}
+
+.info-section {
+    padding: 30px 0;
+    background: var(--card-bg);
+}
+
+.info-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px 60px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 80px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.info-card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    transition: transform 0.5s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.card-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+    color: white;
+    transform: translateY(100%);
+    transition: all 0.5s ease;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    box-sizing: border-box;
+    transform-origin: bottom;
+}
+
+.info-card h3 {
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transition: all 0.5s ease;
+}
+
+.info-card p {
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    transition: all 0.5s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.info-card:hover .card-image {
+    transform: scale(1.03);
+}
+
+.info-card:hover .card-content {
+    transform: translateY(-20px) scale(1.01);
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-card:hover:active .card-content,
+.info-card:focus .card-content,
+.card-content:hover {
+    transform: translateY(0);
+}
+
+/* Base styles for all section titles */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--heading-color);
+    position: relative;
+    padding-bottom: 20px;
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.section-title::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    z-index: -1;
+}
+
+/* Mountain section title specific styles */
+.mountain-title {
+    background-image: linear-gradient(
+        to right,
+        #2E7D32, /* Dark green */
+        #4CAF50, /* Medium green */
+        #81C784, /* Light green */
+        #4CAF50, /* Medium green */
+        #2E7D32  /* Dark green */
+    );
+    animation: mountainTitleColor 8s linear infinite;
+}
+
+/* Water section title specific styles */
+.water-title {
+    background-image: linear-gradient(
+        to right,
+        #1565C0, /* Dark blue */
+        #2196F3, /* Medium blue */
+        #64B5F6, /* Light blue */
+        #2196F3, /* Medium blue */
+        #1565C0  /* Dark blue */
+    );
+    animation: waterTitleColor 8s linear infinite;
+}
+
+/* Cave section title specific styles */
+.cave-title {
+    background-image: linear-gradient(
+        to right,
+        #D84315, /* Dark orange */
+        #FF5722, /* Medium orange */
+        #FF8A65, /* Light orange */
+        #FF5722, /* Medium orange */
+        #D84315  /* Dark orange */
+    );
+    animation: caveTitleColor 8s linear infinite;
+}
+
+/* Flora section title specific styles */
+.flora-title {
+    background-image: linear-gradient(
+        to right,
+        #2E7D32, /* Dark green */
+        #4CAF50, /* Medium green */
+        #81C784, /* Light green */
+        #4CAF50, /* Medium green */
+        #2E7D32  /* Dark green */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: floraTitleColor 16s linear infinite;
+}
+
+/* Fauna section title specific styles */
+.fauna-title {
+    background-image: linear-gradient(
+        to right,
+        #5D4037, /* Dark brown */
+        #8D6E63, /* Medium brown */
+        #A1887F, /* Light brown */
+        #8D6E63, /* Medium brown */
+        #5D4037  /* Dark brown */
+    );
+    animation: faunaTitleColor 8s linear infinite;
+}
+
+/* Wildlife section title specific styles */
+.wildlife-title {
+    background-image: linear-gradient(
+        to right,
+        #795548, /* Dark brown */
+        #A1887F, /* Medium brown */
+        #BCAAA4, /* Light brown */
+        #A1887F, /* Medium brown */
+        #795548  /* Dark brown */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: wildlifeTitleColor 16s linear infinite;
+}
+
+/* Insects & Small Animals section title specific styles */
+.insects-title {
+    background-image: linear-gradient(
+        to right,
+        #FF4081, /* Bright pink */
+        #7C4DFF, /* Purple */
+        #00BCD4, /* Cyan */
+        #7C4DFF, /* Purple */
+        #FF4081  /* Back to bright pink */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: insectsTitleColor 16s linear infinite;
+}
+
+@keyframes insectsTitleColor {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Animation keyframes */
+@keyframes mountainTitleColor {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes waterTitleColor {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes caveTitleColor {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes floraTitleColor {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes faunaTitleColor {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes wildlifeTitleColor {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Theme Customizer */
+.theme-customizer {
+    position: fixed;
+    right: -300px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    box-shadow: var(--card-shadow);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-customizer.open {
+    right: 0;
+}
+
+.customizer-toggle {
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.customizer-section {
+    margin-bottom: 20px;
+}
+
+.customizer-section h3 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.color-picker {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.active {
+    border-color: var(--primary-color);
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-slider {
+    width: 50px;
+    height: 24px;
+    background: #ccc;
+    border-radius: 12px;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.toggle-slider:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background: var(--primary-color);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.radius-slider {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.custom-color-picker {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.color-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.color-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.color-input::-webkit-color-swatch {
+    border: 2px solid var(--card-bg);
+    border-radius: 50%;
+}
+
+.apply-color {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.apply-color:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}
+
+@keyframes spinBack {
+    0% { transform: rotate(180deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.customizer-toggle i {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.customizer-toggle.spinning i {
+    animation: spin 0.3s ease forwards;
+}
+
+.customizer-toggle.spinning-back i {
+    animation: spinBack 0.3s ease forwards;
+}
+
+/* Media Queries */
+@media (max-width: 1600px) {
+    .info-container {
+        max-width: 90%;
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .info-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 60px;
+    }
+    
+    .info-container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .squircle-container {
+        width: 95%;
+        border-radius: 30px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .card-image {
+        aspect-ratio: 16/9;
+    }
+
+    .info-container {
+        padding: 40px 20px;
+    }
+
+    .school-name {
+        font-size: 16px;
+    }
+    
+    .school-logo {
+        height: 30px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+
+    .info-card:hover .card-content {
+        transform: translateY(-10px);
+    }
+
+    @keyframes titleColorChange {
+        0% {
+            color: #4CAF50;
+            transform: translateX(-15px);
+        }
+        33% {
+            color: #2196F3;
+            transform: translateX(15px);
+        }
+        66% {
+            color: #FF5722;
+            transform: translateX(-15px);
+        }
+        100% {
+            color: #4CAF50;
+            transform: translateX(-15px);
+        }
+    }
+
+    .info-card {
+        padding: 25px;
+    }
+
+    .info-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .info-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Add this to your existing CSS file */
+.customizer-toggle.black-icon {
+    background: #ffffff;
+}
+
+.customizer-toggle.black-icon i {
+    color: #000000;
+}
+
+/* Add these new styles to your existing CSS file */
+
+.card-image {
+    width: calc(100% + 60px);
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    margin: -30px -30px 20px -30px;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover .card-image {
+    transform: scale(1.03);
+}
+
+/* Update hero section styles for different pages */
+.hero-section {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Add smooth page transitions */
+.page-transition {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fix for border radius inheritance */
+.info-card, 
+.card-image {
+    border-radius: var(--border-radius);
+}
+
+/* Ensure content overlay corners match card */
+.card-content {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+/* Add subtle border to cards */
+.info-card {
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Dark mode border adjustment */
+[data-theme="dark"] .info-card {
+    border-color: rgba(255,255,255,0.1);
+}
+
+/* Update Fullscreen Modal styles */
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    transform: translateY(-2vh);
+    transition: transform 0.3s ease;
+}
+
+.maps-button {
+    background: #4285F4;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    display: none; /* Hidden by default */
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.maps-button i {
+    font-size: 1.2em;
+}
+
+.maps-button:hover {
+    background: #1a73e8;
+    transform: translateY(-2px);
+}
+
+.fullscreen-modal.active {
+    opacity: 1;
+}
+
+.fullscreen-modal.active .modal-image {
+    transform: translateY(-2vh) scale(1);
+}
+
+.fullscreen-modal.active .maps-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease 0.2s;
+}
+
+/* Hide maps button for images without locations */
+.maps-button.hidden {
+    display: none;
+}
+
+/* Update card image cursor */
+.card-image {
+    cursor: zoom-in;
+}
+
+/* Remove any focus outlines */
+.info-card:focus,
+.card-image:focus,
+.modal-image:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Remove any hover borders */
+.info-card:hover,
+.card-image:hover {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Hidden grid styles */
+.hidden-grid {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin-top: 30px;
+}
+
+.hidden-grid.show {
+    display: grid;
+    opacity: 1;
+}
+
+/* See More button styles */
+.see-more-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 30px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Dark mode with white theme color */
+[data-theme="dark"] .see-more-btn[style*="background: rgb(255, 255, 255)"],
+[data-theme="dark"] .see-more-btn[style*="background: #ffffff"],
+[data-theme="dark"] .see-more-btn[style*="background: white"] {
+    color: #000000;
+}
+
+/* All other colors keep white text */
+.see-more-btn:not([style*="background: rgb(255, 255, 255)"]):not([style*="background: #ffffff"]):not([style*="background: white"]) {
+    color: white;
+}
+
+.see-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.see-more-btn.active {
+    background: #f44336;
+    color: white; /* Always white text when active (Show Less state) */
+}
+
+/* Protected Areas title styles */
+.protected-title {
+    background-image: linear-gradient(
+        to right,
+        #1B5E20, /* Dark green */
+        #2E7D32, /* Medium green */
+        #43A047, /* Light green */
+        #2E7D32, /* Medium green */
+        #1B5E20  /* Dark green */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: protectedTitleColor 16s linear infinite;
+}
+
+/* Conservation Initiatives title styles */
+.initiatives-title {
+    background-image: linear-gradient(
+        to right,
+        #0D47A1, /* Dark blue */
+        #1976D2, /* Medium blue */
+        #42A5F5, /* Light blue */
+        #1976D2, /* Medium blue */
+        #0D47A1  /* Dark blue */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: initiativesTitleColor 16s linear infinite;
+}
+
+@keyframes protectedTitleColor {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes initiativesTitleColor {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* About page specific styles */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.about-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+}
+
+.about-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.about-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Team section styles */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.team-image {
+    width: 100%;
+    padding: 40px;
+    background: var(--primary-color);
+}
+
+.team-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+.team-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.team-content h3 {
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.team-role {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.team-description {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Features section styles */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.feature-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Title animations */
+.overview-title {
+    background-image: linear-gradient(
+        to right,
+        #43A047, /* Green */
+        #1E88E5, /* Blue */
+        #43A047  /* Green */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: overviewTitleColor 16s linear infinite;
+}
+
+.team-title {
+    background-image: linear-gradient(
+        to right,
+        #E65100, /* Orange */
+        #F57C00, /* Light Orange */
+        #E65100  /* Orange */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: teamTitleColor 16s linear infinite;
+}
+
+.features-title {
+    background-image: linear-gradient(
+        to right,
+        #7B1FA2, /* Purple */
+        #9C27B0, /* Light Purple */
+        #7B1FA2  /* Purple */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: featuresTitleColor 16s linear infinite;
+}
+
+@keyframes overviewTitleColor {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes teamTitleColor {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes featuresTitleColor {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-grid, .team-grid, .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-card, .team-card, .feature-card {
+        padding: 25px;
+    }
+    
+    .about-icon {
+        font-size: 2.5rem;
+    }
+    
+    .team-image img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Fullscreen modal styles */
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    transform: translateY(-2vh);
+    transition: transform 0.3s ease;
+}
+
+.fullscreen-modal.active {
+    opacity: 1;
+}
+
+.fullscreen-modal.active .modal-image {
+    transform: translateY(-2vh) scale(1);
+}
+
+.close-modal {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+/* Maps button (only for landscapes page) */
+.maps-button {
+    background: #4285F4;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    display: none; /* Hidden by default */
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.maps-button i {
+    font-size: 1.2em;
+}
+
+.maps-button:hover {
+    background: #1a73e8;
+    transform: translateY(-2px);
+}
+
+.fullscreen-modal.active .maps-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease 0.2s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-image {
+        max-width: 95%;
+        max-height: 90vh;
+    }
+    
+    .close-modal {
+        top: 10px;
+        right: 20px;
+        font-size: 35px;
+    }
+}

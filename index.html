@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Wonders of Kosovo</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <img src="./assets/images/logo.png" alt="Fan Noli Logo" class="school-logo">
+            <span class="school-name">Fan S. Noli Podujeve</span>
+        </div>
+        <div class="nav-links">
+            <a href="./index.html" class="active">Home</a>
+            <a href="./biodiversity.html">Biodiversity</a>
+            <a href="./landscapes.html">Landscapes</a>
+            <a href="./conservation.html">Conservation</a>
+            <a href="./about.html">About</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <h1 class="hero-title">Kosovo's Nature</h1>
+    </section>
+
+    <section id="biodiversity" class="info-section">
+        <div class="info-container">
+            <h2 class="section-title" data-aos="fade-up">Biodiversity</h2>
+            <div class="info-grid">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Flora</h3>
+                    <p>Kosovo hosts over 2,500 species of vascular plants, with many endemic species found in the Sharr Mountains and Bjeshkët e Nemuna ranges. The country's diverse habitats support a rich variety of plant life, from alpine meadows to Mediterranean flora.</p>
+                </div>
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Fauna</h3>
+                    <p>The region is home to numerous wildlife species, including the endangered Balkan Lynx, Brown Bears, Wolves, and various species of eagles. The mountains provide crucial habitats for many rare and protected animal species.</p>
+                </div>
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Ecosystems</h3>
+                    <p>From alpine ecosystems in the high mountains to river valleys and forests, Kosovo's varied landscapes support diverse ecological communities and provide important corridors for wildlife movement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="landscapes" class="info-section" style="background: var(--section-alt-bg);">
+        <div class="info-container">
+            <h2 class="section-title" data-aos="fade-up">Natural Landscapes</h2>
+            <div class="info-grid">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Mountains</h3>
+                    <p>The Sharr Mountains and Bjeshkët e Nemuna dominate Kosovo's landscape, offering breathtaking views and opportunities for hiking, skiing, and mountain climbing. These ranges feature dramatic peaks, alpine lakes, and pristine wilderness.</p>
+                </div>
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Waterfalls</h3>
+                    <p>The Mirusha Waterfalls create a spectacular series of 13 lakes and waterfalls, while the White Drin Waterfall offers another magnificent natural attraction. These water features provide important habitats and recreational opportunities.</p>
+                </div>
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Caves</h3>
+                    <p>The Gadime Cave, known for its unique aragonite crystals and marble formations, represents one of Kosovo's most fascinating geological features. The cave system extends for several kilometers underground.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conservation" class="info-section">
+        <div class="info-container">
+            <h2 class="section-title" data-aos="fade-up">Conservation Efforts</h2>
+            <div class="info-grid">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Protected Areas</h3>
+                    <p>Kosovo has established several national parks and protected areas to preserve its natural heritage, including Sharr Mountains National Park and Bjeshkët e Nemuna National Park.</p>
+                </div>
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Sustainable Tourism</h3>
+                    <p>Efforts are being made to develop sustainable tourism practices that allow visitors to experience Kosovo's natural wonders while minimizing environmental impact.</p>
+                </div>
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Future Challenges</h3>
+                    <p>Kosovo faces ongoing challenges in balancing development with environmental protection, requiring continued commitment to conservation and sustainable practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="theme-customizer">
+        <div class="customizer-toggle">
+            <i class="fas fa-cog"></i>
+        </div>
+        <div class="customizer-section">
+            <h3>Theme Mode</h3>
+            <label class="toggle-switch">
+                <span>Dark Mode</span>
+                <input type="checkbox" id="theme-toggle">
+                <div class="toggle-slider"></div>
+            </label>
+        </div>
+        <div class="customizer-section">
+            <h3>Color Theme</h3>
+            <div class="color-picker" id="primary-colors">
+                <div class="color-option active" style="background: #4CAF50" data-color="#4CAF50"></div>
+                <div class="color-option" style="background: #2196F3" data-color="#2196F3"></div>
+                <div class="color-option" style="background: #FF5722" data-color="#FF5722"></div>
+                <div class="color-option" style="background: #9C27B0" data-color="#9C27B0"></div>
+                <div class="color-option" style="background: #000000" data-color="#000000"></div>
+                <div class="color-option" style="background: #ffffff; border: 1px solid #ccc" data-color="#ffffff"></div>
+            </div>
+        </div>
+        <div class="customizer-section">
+            <h3>Custom Color</h3>
+            <div class="custom-color-picker">
+                <input type="color" id="custom-color" class="color-input">
+            </div>
+        </div>
+        <div class="customizer-section">
+            <h3>Border Radius</h3>
+            <input type="range" class="radius-slider" id="radius-slider" min="0" max="60" value="20">
+        </div>
+    </div>
+
+    <!-- Add JavaScript file at the end of body -->
+    <script src="js/main.js"></script>
+</body>
+</html>
