@@ -16,44 +16,60 @@
             <span class="school-name">Fan S. Noli Podujeve</span>
         </div>
         <div class="nav-links">
-            <a href="./index.html">Home</a>
-            <a href="./biodiversity.html">Biodiversity</a>
-            <a href="./landscapes.html">Landscapes</a>
-            <a href="./conservation.html">Conservation</a>
-            <a href="./about.html" class="active">About</a>
+            <a href="./index.html" data-translate="home">Home</a>
+            <a href="./biodiversity.html" data-translate="biodiversity">Biodiversity</a>
+            <a href="./landscapes.html" data-translate="landscapes">Landscapes</a>
+            <a href="./conservation.html" data-translate="conservation">Conservation</a>
+            <a href="./about.html" data-translate="about" class="active">About</a>
+            <div class="language-switcher">
+                <button class="lang-btn">
+                    <img src="./assets/images/uk-flag.png" alt="English" class="lang-flag">
+                    <span>ENG</span>
+                </button>
+                <div class="language-dropdown">
+                    <button class="lang-option" data-lang="en">
+                        <img src="./assets/images/uk-flag.png" alt="English" class="lang-flag">
+                        <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="sq">
+                        <img src="./assets/images/albania-flag.png" alt="Albanian" class="lang-flag">
+                        <span>Shqip</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <section id="hero" class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('./assets/images/KosovoFlag.png');">
-        <h1 class="hero-title">About Our Project</h1>
+        <h1 class="hero-title" data-translate="hero-about">About Our Project</h1>
     </section>
 
     <!-- Project Overview Section -->
     <section class="info-section">
         <div class="info-container">
-            <h2 class="section-title overview-title" data-aos="fade-up" data-text="Project Overview">Project Overview</h2>
+            <h2 class="section-title overview-title" data-aos="fade-up" data-translate="overview-section">Project Overview</h2>
             <div class="about-grid">
                 <div class="about-card" data-aos="fade-right">
                     <div class="about-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h3>Our Mission</h3>
-                    <p>To showcase and preserve Kosovo's natural wonders through digital storytelling and education, inspiring future generations to protect our environmental heritage.</p>
+                    <h3 data-translate="our-mission">Our Mission</h3>
+                    <p data-translate="our-mission-desc">To showcase and preserve Kosovo's natural wonders through digital storytelling and education, inspiring future generations to protect our environmental heritage.</p>
                 </div>
                 <div class="about-card" data-aos="fade-up">
                     <div class="about-icon">
                         <i class="fas fa-mountain"></i>
                     </div>
-                    <h3>Our Vision</h3>
-                    <p>Creating awareness about Kosovo's biodiversity, landscapes, and conservation efforts while promoting sustainable tourism and environmental protection.</p>
+                    <h3 data-translate="our-vision">Our Vision</h3>
+                    <p data-translate="our-vision-desc">Creating awareness about Kosovo's biodiversity, landscapes, and conservation efforts while promoting sustainable tourism and environmental protection.</p>
                 </div>
                 <div class="about-card" data-aos="fade-left">
                     <div class="about-icon">
                         <i class="fas fa-hand-holding-heart"></i>
                     </div>
-                    <h3>Our Values</h3>
-                    <p>Commitment to environmental education, scientific accuracy, and the celebration of Kosovo's natural beauty through modern web technology.</p>
+                    <h3 data-translate="our-values">Our Values</h3>
+                    <p data-translate="our-values-desc">Commitment to environmental education, scientific accuracy, and the celebration of Kosovo's natural beauty through modern web technology.</p>
                 </div>
             </div>
         </div>
@@ -62,16 +78,16 @@
     <!-- Team Section -->
     <section class="info-section" style="background: var(--section-alt-bg);">
         <div class="info-container">
-            <h2 class="section-title team-title" data-aos="fade-up" data-text="Our Team">Our Team</h2>
+            <h2 class="section-title team-title" data-aos="fade-up" data-translate="team-section">Our Team</h2>
             <div class="team-grid">
                 <div class="team-card" data-aos="fade-up">
                     <div class="team-image">
                         <img src="./assets/images/logo.png" alt="School Logo">
                     </div>
                     <div class="team-content">
-                        <h3>Fan S. Noli Podujeve</h3>
-                        <p class="team-role">School Project</p>
-                        <p class="team-description">Made by students of Fan S. Noli Podujeve: Memli Aliu & Aldin Berisha</p>
+                        <h3 data-translate="school-name">Fan S. Noli Podujeve</h3>
+                        <p class="team-role" data-translate="school-project">School Project</p>
+                        <p class="team-description" data-translate="team-members">Made by students of Fan S. Noli Podujeve: Memli Aliu & Aldin Berisha</p>
                     </div>
                 </div>
             </div>
@@ -81,27 +97,27 @@
     <!-- Features Section -->
     <section class="info-section">
         <div class="info-container">
-            <h2 class="section-title features-title" data-aos="fade-up" data-text="Website Features">Website Features</h2>
+            <h2 class="section-title features-title" data-aos="fade-up" data-translate="features-section">Website Features</h2>
             <div class="features-grid">
                 <div class="feature-card" data-aos="zoom-in">
                     <i class="fas fa-palette"></i>
-                    <h3>Theme Customization</h3>
-                    <p>Personalize your viewing experience with custom colors and dark mode.</p>
+                    <h3 data-translate="theme-customization">Theme Customization</h3>
+                    <p data-translate="theme-customization-desc">Personalize your viewing experience with custom colors and dark mode.</p>
                 </div>
                 <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fas fa-images"></i>
-                    <h3>Interactive Galleries</h3>
-                    <p>Explore high-quality images with fullscreen viewing capability.</p>
+                    <h3 data-translate="interactive-galleries">Interactive Galleries</h3>
+                    <p data-translate="interactive-galleries-desc">Explore high-quality images with fullscreen viewing capability.</p>
                 </div>
                 <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-mobile-alt"></i>
-                    <h3>Responsive Design</h3>
-                    <p>Optimized for all devices and screen sizes.</p>
+                    <h3 data-translate="responsive-design">Responsive Design</h3>
+                    <p data-translate="responsive-design-desc">Optimized for all devices and screen sizes.</p>
                 </div>
                 <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
                     <i class="fas fa-magic"></i>
-                    <h3>Animated Elements</h3>
-                    <p>Smooth animations and transitions for enhanced user experience.</p>
+                    <h3 data-translate="animated-elements">Animated Elements</h3>
+                    <p data-translate="animated-elements-desc">Smooth animations and transitions for enhanced user experience.</p>
                 </div>
             </div>
         </div>
@@ -113,15 +129,15 @@
             <i class="fas fa-cog"></i>
         </div>
         <div class="customizer-section">
-            <h3>Theme Mode</h3>
+            <h3 data-translate="theme-mode">Theme Mode</h3>
             <label class="toggle-switch">
-                <span>Dark Mode</span>
+                <span data-translate="dark-mode">Dark Mode</span>
                 <input type="checkbox" id="theme-toggle">
                 <div class="toggle-slider"></div>
             </label>
         </div>
         <div class="customizer-section">
-            <h3>Color Theme</h3>
+            <h3 data-translate="color-theme">Color Theme</h3>
             <div class="color-picker" id="primary-colors">
                 <div class="color-option active" style="background: #4CAF50" data-color="#4CAF50"></div>
                 <div class="color-option" style="background: #2196F3" data-color="#2196F3"></div>
@@ -132,13 +148,13 @@
             </div>
         </div>
         <div class="customizer-section">
-            <h3>Custom Color</h3>
+            <h3 data-translate="custom-color">Custom Color</h3>
             <div class="custom-color-picker">
                 <input type="color" id="custom-color" class="color-input">
             </div>
         </div>
         <div class="customizer-section">
-            <h3>Border Radius</h3>
+            <h3 data-translate="border-radius">Border Radius</h3>
             <input type="range" class="radius-slider" id="radius-slider" min="0" max="60" value="20">
         </div>
     </div>
