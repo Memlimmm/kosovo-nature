@@ -2,7 +2,7 @@
     --primary-color: #4CAF50;
     --secondary-color: var(--primary-color);
     --accent-color: var(--primary-color);
-    --text-color: #333;
+    --text-color: #000000;
     --bg-color: #f5f5f5;
     --card-bg: #fff;
     --card-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -46,45 +46,88 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 15px 20px;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    background: #2c2c2c; /* Dark gray background */
+    border-bottom: 1px solid #3a3a3a;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .school-logo {
-    height: 40px;
-    width: auto;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 
 .school-name {
-    color: white;
-    font-size: 20px;
+    font-size: 1.2rem;
+    color: white !important; /* Always white */
     font-weight: 500;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 2rem;
 }
 
 .nav-links a {
-    color: white;
+    color: white !important; /* Always white */
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: white !important;
+    opacity: 0.8;
+}
+
+.nav-links a.active {
+    color: white !important;
+    font-weight: 500;
+}
+
+/* Active page indicator */
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] nav {
+    background: #2c2c2c;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+[data-theme="dark"] .school-name,
+[data-theme="dark"] .nav-links a {
+    color: white !important;
+}
+
+/* Ensure text stays white in both themes */
+[data-theme="light"] .school-name,
+[data-theme="light"] .nav-links a {
+    color: white !important;
 }
 
 .hero-section {
@@ -109,10 +152,10 @@ nav {
     opacity: 0;
     background: linear-gradient(
         to right,
-        #2E7D32, /* Green */
-        #0D47A1, /* Dark Blue */
-        #FFD700, /* Yellow */
-        #2E7D32  /* Back to green */
+        #2E7D32,    /* Dark Green */
+        #0D47A1,    /* Dark Blue */
+        #FFD700,    /* Yellow */
+        #2E7D32     /* Back to Dark Green */
     );
     background-size: 200% auto;
     color: transparent;
@@ -120,7 +163,7 @@ nav {
     background-clip: text;
     animation: 
         fadeInUp 1s ease forwards,
-        titleColorChange 16s linear infinite;
+        titleColorChange 8s linear infinite;
 }
 
 @keyframes fadeInUp {
@@ -132,7 +175,7 @@ nav {
 
 @keyframes titleColorChange {
     0% {
-        background-position: -200% center;
+        background-position: 0% center;
     }
     100% {
         background-position: 200% center;
@@ -236,7 +279,7 @@ nav {
 }
 
 .info-card h3 {
-    color: white;
+    color: var(--primary-color);
     margin: 0 0 15px 0;
     font-size: 24px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -244,7 +287,7 @@ nav {
 }
 
 .info-card p {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--text-color);
     margin: 0;
     line-height: 1.6;
     font-size: 0.95rem;
@@ -277,7 +320,7 @@ nav {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 30px;
-    color: var(--heading-color);
+    color: var(--primary-color);
     position: relative;
     padding-bottom: 20px;
     background-size: 200% auto;
@@ -815,30 +858,36 @@ nav {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
-}
-
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 90%;
-    max-height: 90vh;
+    padding: 20px;
 }
 
 .modal-image {
-    max-width: 100%;
-    max-height: 80vh;
+    max-width: 90%;
+    max-height: 90vh;
     object-fit: contain;
-    transform: translateY(-2vh);
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ccc;
+}
+
+/* Maps button (only for landscapes page) */
 .maps-button {
     background: #4285F4;
     color: white;
@@ -884,7 +933,12 @@ nav {
 
 /* Update card image cursor */
 .card-image {
-    cursor: zoom-in;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-image:hover {
+    transform: scale(1.05);
 }
 
 /* Remove any focus outlines */
@@ -1215,107 +1269,181 @@ nav {
     }
 }
 
-/* Fullscreen modal styles */
-.fullscreen-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    align-items: center;
+/* Language Switcher Styles */
+.language-switcher {
+    position: relative;
+    margin-left: 1rem;
 }
 
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-flag {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-option:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .language-dropdown {
+    background: var(--bg-color);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .lang-option {
+    color: var(--text-color);
+}
+
+/* Modal Content and Google Maps Button */
 .modal-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     max-width: 90%;
     max-height: 90vh;
 }
 
-.modal-image {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    transform: translateY(-2vh);
-    transition: transform 0.3s ease;
-}
-
-.fullscreen-modal.active {
-    opacity: 1;
-}
-
-.fullscreen-modal.active .modal-image {
-    transform: translateY(-2vh) scale(1);
-}
-
-.close-modal {
-    position: fixed;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1001;
-    transition: transform 0.3s ease;
-    padding: 10px;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-.close-modal:hover {
-    transform: scale(1.1);
-}
-
-/* Maps button (only for landscapes page) */
-.maps-button {
-    background: #4285F4;
-    color: white;
+.google-maps-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4dabf7; /* Light blue background */
+    color: #ffffff; /* White text */
     padding: 12px 24px;
-    border-radius: 30px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 500;
-    display: none; /* Hidden by default */
+    display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
-    transform: translateY(20px);
+    pointer-events: none;
+    border: none;
 }
 
-.maps-button i {
-    font-size: 1.2em;
-}
-
-.maps-button:hover {
-    background: #1a73e8;
-    transform: translateY(-2px);
-}
-
-.fullscreen-modal.active .maps-button {
+.google-maps-btn.visible {
     opacity: 1;
-    transform: translateY(0);
-    transition: all 0.3s ease 0.2s;
+    pointer-events: auto;
+}
+
+.google-maps-btn:hover {
+    background-color: #339af0; /* Slightly darker blue on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.google-maps-btn i {
+    color: #ffffff; /* White icon */
+    animation: pulse 2s infinite;
+}
+
+/* Pulse animation for the icon */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .modal-image {
         max-width: 95%;
-        max-height: 90vh;
+        max-height: 95vh;
     }
-    
+
     .close-modal {
         top: 10px;
         right: 20px;
-        font-size: 35px;
+        font-size: 30px;
     }
+
+    .google-maps-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Make description text white in light mode */
+.info-card .card-content p {
+    color: white !important;
+}
+
+/* Keep the titles in their current color */
+.info-card .card-content h3 {
+    /* The titles already have the correct color, so we don't need to change them */
+    color: var(--text-color);
+}
+
+/* Ensure text remains readable in dark mode */
+[data-theme="dark"] .info-card .card-content p {
+    color: var(--text-color) !important;
+}
+
+/* Make card titles use the theme color */
+.info-card .card-content h3 {
+    color: var(--primary-color) !important;
+    transition: color 0.3s ease;
+}
+
+/* Keep descriptions white in light mode */
+.info-card .card-content p {
+    color: white !important;
+}
+
+/* Ensure text remains readable in dark mode */
+[data-theme="dark"] .info-card .card-content p {
+    color: var(--text-color) !important;
 }
