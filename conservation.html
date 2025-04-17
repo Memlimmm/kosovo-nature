@@ -16,43 +16,59 @@
             <span class="school-name">Fan S. Noli Podujeve</span>
         </div>
         <div class="nav-links">
-            <a href="./index.html">Home</a>
-            <a href="./biodiversity.html">Biodiversity</a>
-            <a href="./landscapes.html">Landscapes</a>
-            <a href="./conservation.html" class="active">Conservation</a>
-            <a href="./about.html">About</a>
+            <a href="./index.html" data-translate="home">Home</a>
+            <a href="./biodiversity.html" data-translate="biodiversity">Biodiversity</a>
+            <a href="./landscapes.html" data-translate="landscapes">Landscapes</a>
+            <a href="./conservation.html" data-translate="conservation" class="active">Conservation</a>
+            <a href="./about.html" data-translate="about">About</a>
+            <div class="language-switcher">
+                <button class="lang-btn">
+                    <img src="./assets/images/uk-flag.png" alt="English" class="lang-flag">
+                    <span>ENG</span>
+                </button>
+                <div class="language-dropdown">
+                    <button class="lang-option" data-lang="en">
+                        <img src="./assets/images/uk-flag.png" alt="English" class="lang-flag">
+                        <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="sq">
+                        <img src="./assets/images/albania-flag.png" alt="Albanian" class="lang-flag">
+                        <span>Shqip</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <section id="hero" class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('./assets/images/conservationefforts.png');">
-        <h1 class="hero-title">Kosovo's Conservation</h1>
+        <h1 class="hero-title" data-translate="hero-conservation">Kosovo's Conservation</h1>
     </section>
 
     <!-- Protected Areas Section -->
     <section class="info-section">
         <div class="info-container">
-            <h2 class="section-title protected-title" data-aos="fade-up" data-text="Protected Areas">Protected Areas</h2>
+            <h2 class="section-title protected-title" data-aos="fade-up" data-translate="protected-areas-section">Protected Areas</h2>
             <div class="info-grid initial-grid">
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="./assets/images/naturereserves.png" alt="Nature Reserves" class="card-image">
                     <div class="card-content">
-                        <h3>Nature Reserves</h3>
-                        <p>Protected zones preserving Kosovo's unique biodiversity.</p>
+                        <h3 data-translate="nature-reserves">Nature Reserves</h3>
+                        <p data-translate="nature-reserves-desc">Protected zones preserving Kosovo's unique biodiversity.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
                     <img src="./assets/images/nationalparks.jpg" alt="National Parks" class="card-image">
                     <div class="card-content">
-                        <h3>National Parks</h3>
-                        <p>Vast protected landscapes showcasing Kosovo's natural heritage.</p>
+                        <h3 data-translate="national-parks">National Parks</h3>
+                        <p data-translate="national-parks-desc">Vast protected landscapes showcasing Kosovo's natural heritage.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
                     <img src="./assets/images/sanctuaries.png" alt="Wildlife Sanctuaries" class="card-image">
                     <div class="card-content">
-                        <h3>Wildlife Sanctuaries</h3>
-                        <p>Safe havens for endangered species and wildlife.</p>
+                        <h3 data-translate="wildlife-sanctuaries">Wildlife Sanctuaries</h3>
+                        <p data-translate="wildlife-sanctuaries-desc">Safe havens for endangered species and wildlife.</p>
                     </div>
                 </div>
             </div>
@@ -60,53 +76,53 @@
                 <div class="info-card">
                     <img src="./assets/images/sharrnp.png" alt="Sharr Mountains Park" class="card-image">
                     <div class="card-content">
-                        <h3>Sharr Mountains Park</h3>
-                        <p>One of Kosovo's largest protected areas with diverse ecosystems.</p>
+                        <h3 data-translate="sharr-park">Sharr Mountains Park</h3>
+                        <p data-translate="sharr-park-desc">One of Kosovo's largest protected areas with diverse ecosystems.</p>
                     </div>
                 </div>
                 <div class="info-card">
                     <img src="./assets/images/bjeshketnp.png" alt="Bjeshkët e Nemuna" class="card-image">
                     <div class="card-content">
-                        <h3>Bjeshkët e Nemuna</h3>
-                        <p>Protected mountain range with unique flora and fauna.</p>
+                        <h3 data-translate="bjeshket-park">Bjeshkët e Nemuna</h3>
+                        <p data-translate="bjeshket-park-desc">Protected mountain range with unique flora and fauna.</p>
                     </div>
                 </div>
                 <div class="info-card">
                     <img src="./assets/images/germiapark.jpg" alt="Germia Park" class="card-image">
                     <div class="card-content">
-                        <h3>Germia Park</h3>
-                        <p>Urban nature reserve protecting local biodiversity.</p>
+                        <h3 data-translate="germia-park">Germia Park</h3>
+                        <p data-translate="germia-park-desc">Urban nature reserve protecting local biodiversity.</p>
                     </div>
                 </div>
             </div>
-            <button class="see-more-btn" data-target="protected-extra">See More Protected Areas</button>
+            <button class="see-more-btn" data-target="protected-extra" data-translate="see-more-protected">See More Protected Areas</button>
         </div>
     </section>
 
     <!-- Initiatives Section -->
-    <section class="info-section">
+    <section class="info-section" style="background: var(--section-alt-bg);">
         <div class="info-container">
-            <h2 class="section-title initiatives-title" data-aos="fade-up" data-text="Conservation Initiatives">Conservation Initiatives</h2>
+            <h2 class="section-title initiatives-title" data-aos="fade-up" data-translate="initiatives-section">Conservation Initiatives</h2>
             <div class="info-grid initial-grid">
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="./assets/images/squirellspecies.jpg" alt="Species Protection" class="card-image">
                     <div class="card-content">
-                        <h3>Species Protection</h3>
-                        <p>Programs dedicated to protecting endangered species.</p>
+                        <h3 data-translate="species-protection">Species Protection</h3>
+                        <p data-translate="species-protection-desc">Programs dedicated to protecting endangered species.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
                     <img src="./assets/images/conservationhabitat.jpg" alt="Habitat Restoration" class="card-image">
                     <div class="card-content">
-                        <h3>Habitat Restoration</h3>
-                        <p>Projects focused on restoring damaged ecosystems.</p>
+                        <h3 data-translate="habitat-restoration">Habitat Restoration</h3>
+                        <p data-translate="habitat-restoration-desc">Projects focused on restoring damaged ecosystems.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
                     <img src="./assets/images/tourism.png" alt="Sustainable Tourism" class="card-image">
                     <div class="card-content">
-                        <h3>Sustainable Tourism</h3>
-                        <p>Eco-friendly tourism practices protecting natural areas.</p>
+                        <h3 data-translate="sustainable-tourism">Sustainable Tourism</h3>
+                        <p data-translate="sustainable-tourism-desc">Eco-friendly tourism practices protecting natural areas.</p>
                     </div>
                 </div>
             </div>
@@ -114,26 +130,26 @@
                 <div class="info-card">
                     <img src="./assets/images/wolfconservation.png" alt="Wolf Conservation" class="card-image">
                     <div class="card-content">
-                        <h3>Wolf Conservation</h3>
-                        <p>Programs to protect and monitor wolf populations.</p>
+                        <h3 data-translate="wolf-conservation">Wolf Conservation</h3>
+                        <p data-translate="wolf-conservation-desc">Programs to protect and monitor wolf populations.</p>
                     </div>
                 </div>
                 <div class="info-card">
                     <img src="./assets/images/waterprotection.png" alt="Water Protection" class="card-image">
                     <div class="card-content">
-                        <h3>Water Protection</h3>
-                        <p>Initiatives to preserve water resources and aquatic life.</p>
+                        <h3 data-translate="water-protection">Water Protection</h3>
+                        <p data-translate="water-protection-desc">Initiatives to preserve water resources and aquatic life.</p>
                     </div>
                 </div>
                 <div class="info-card">
                     <img src="./assets/images/KosovoResearchandAnalysisFellowship.png" alt="Research Programs" class="card-image">
                     <div class="card-content">
-                        <h3>Research Programs</h3>
-                        <p>Scientific studies supporting conservation efforts.</p>
+                        <h3 data-translate="research-programs">Research Programs</h3>
+                        <p data-translate="research-programs-desc">Scientific studies supporting conservation efforts.</p>
                     </div>
                 </div>
             </div>
-            <button class="see-more-btn" data-target="initiatives-extra">See More Initiatives</button>
+            <button class="see-more-btn" data-target="initiatives-extra" data-translate="see-more-initiatives">See More Initiatives</button>
         </div>
     </section>
 
@@ -143,15 +159,15 @@
             <i class="fas fa-cog"></i>
         </div>
         <div class="customizer-section">
-            <h3>Theme Mode</h3>
+            <h3 data-translate="theme-mode">Theme Mode</h3>
             <label class="toggle-switch">
-                <span>Dark Mode</span>
+                <span data-translate="dark-mode">Dark Mode</span>
                 <input type="checkbox" id="theme-toggle">
                 <div class="toggle-slider"></div>
             </label>
         </div>
         <div class="customizer-section">
-            <h3>Color Theme</h3>
+            <h3 data-translate="color-theme">Color Theme</h3>
             <div class="color-picker" id="primary-colors">
                 <div class="color-option active" style="background: #4CAF50" data-color="#4CAF50"></div>
                 <div class="color-option" style="background: #2196F3" data-color="#2196F3"></div>
@@ -162,13 +178,13 @@
             </div>
         </div>
         <div class="customizer-section">
-            <h3>Custom Color</h3>
+            <h3 data-translate="custom-color">Custom Color</h3>
             <div class="custom-color-picker">
                 <input type="color" id="custom-color" class="color-input">
             </div>
         </div>
         <div class="customizer-section">
-            <h3>Border Radius</h3>
+            <h3 data-translate="border-radius">Border Radius</h3>
             <input type="range" class="radius-slider" id="radius-slider" min="0" max="60" value="20">
         </div>
     </div>
