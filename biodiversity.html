@@ -13,20 +13,36 @@
     <nav>
         <div class="logo-container">
             <img src="./assets/images/logo.png" alt="Fan Noli Logo" class="school-logo">
-            <span class="school-name">Fan S. Noli Podujeve</span>
+            <span class="school-name" data-translate="school-name">Fan S. Noli Podujeve</span>
         </div>
         <div class="nav-links">
-            <a href="./index.html">Home</a>
-            <a href="./biodiversity.html" class="active">Biodiversity</a>
-            <a href="./landscapes.html">Landscapes</a>
-            <a href="./conservation.html">Conservation</a>
-            <a href="./about.html">About</a>
+            <a href="./index.html" data-translate="nav-home">Home</a>
+            <a href="./biodiversity.html" data-translate="nav-biodiversity" class="active">Biodiversity</a>
+            <a href="./landscapes.html" data-translate="nav-landscapes">Landscapes</a>
+            <a href="./conservation.html" data-translate="nav-conservation">Conservation</a>
+            <a href="./about.html" data-translate="nav-about">About</a>
+            <div class="language-switcher">
+                <button class="lang-btn">
+                    <img src="./assets/images/uk-flag.png" alt="English" class="lang-flag">
+                    <span>ENG</span>
+                </button>
+                <div class="language-dropdown">
+                    <button class="lang-option" data-lang="en">
+                        <img src="./assets/images/uk-flag.png" alt="English" class="lang-flag">
+                        <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="sq">
+                        <img src="./assets/images/albania-flag.png" alt="Albanian" class="lang-flag">
+                        <span>Shqip</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <section id="hero" class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('./assets/images/biodiversity.png');">
-        <h1 class="hero-title">Kosovo's Biodiversity</h1>
+        <h1 class="hero-title" data-translate="hero-biodiversity">Kosovo's Biodiversity</h1>
     </section>
 
     <!-- Theme Customizer -->
@@ -35,15 +51,15 @@
             <i class="fas fa-cog"></i>
         </div>
         <div class="customizer-section">
-            <h3>Theme Mode</h3>
+            <h3 data-translate="theme-mode">Theme Mode</h3>
             <label class="toggle-switch">
-                <span>Dark Mode</span>
+                <span data-translate="dark-mode">Dark Mode</span>
                 <input type="checkbox" id="theme-toggle">
                 <div class="toggle-slider"></div>
             </label>
         </div>
         <div class="customizer-section">
-            <h3>Color Theme</h3>
+            <h3 data-translate="color-theme">Color Theme</h3>
             <div class="color-picker" id="primary-colors">
                 <div class="color-option active" style="background: #4CAF50" data-color="#4CAF50"></div>
                 <div class="color-option" style="background: #2196F3" data-color="#2196F3"></div>
@@ -54,13 +70,13 @@
             </div>
         </div>
         <div class="customizer-section">
-            <h3>Custom Color</h3>
+            <h3 data-translate="custom-color">Custom Color</h3>
             <div class="custom-color-picker">
                 <input type="color" id="custom-color" class="color-input">
             </div>
         </div>
         <div class="customizer-section">
-            <h3>Border Radius</h3>
+            <h3 data-translate="border-radius">Border Radius</h3>
             <input type="range" class="radius-slider" id="radius-slider" min="0" max="60" value="20">
         </div>
     </div>
@@ -68,162 +84,162 @@
     <!-- Flora Section -->
     <section class="info-section">
         <div class="info-container">
-            <h2 class="section-title flora-title" data-aos="fade-up" data-text="Flora">Flora</h2>
+            <h2 class="section-title flora-title" data-aos="fade-up" data-translate="flora-section">Flora</h2>
             <div class="info-grid initial-grid">
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="./assets/images/biodiversityplants.png" alt="Mountain Flora" class="card-image">
                     <div class="card-content">
-                        <h3>Mountain Flora</h3>
-                        <p>Diverse alpine plants thriving in Kosovo's mountainous regions.</p>
+                        <h3 data-translate="mountain-flora">Mountain Flora</h3>
+                        <p data-translate="mountain-flora-desc">Diverse alpine plants thriving in Kosovo's mountainous regions.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
                     <img src="./assets/images/biodiversityforest.png" alt="Forest Flora" class="card-image">
                     <div class="card-content">
-                        <h3>Forest Flora</h3>
-                        <p>Rich variety of trees and plants in Kosovo's forests.</p>
+                        <h3 data-translate="forest-flora">Forest Flora</h3>
+                        <p data-translate="forest-flora-desc">Rich variety of trees and plants in Kosovo's forests.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
                     <img src="./assets/images/biodiversityalpinemeadows.png" alt="Meadow Flora" class="card-image">
                     <div class="card-content">
-                        <h3>Meadow Flora</h3>
-                        <p>Colorful wildflowers and grasses in Kosovo's meadows.</p>
+                        <h3 data-translate="meadow-flora">Meadow Flora</h3>
+                        <p data-translate="meadow-flora-desc">Colorful wildflowers and grasses in Kosovo's meadows.</p>
                     </div>
                 </div>
             </div>
             <div class="info-grid hidden-grid flora-extra">
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="400">
                     <img src="./assets/images/alpineflowers.png" alt="Alpine Flowers" class="card-image">
                     <div class="card-content">
-                        <h3>Alpine Flowers</h3>
-                        <p>Colorful blooms adorning Kosovo's high-altitude meadows.</p>
+                        <h3 data-translate="alpine-flowers">Alpine Flowers</h3>
+                        <p data-translate="alpine-flowers-desc">Colorful blooms adorning Kosovo's high-altitude meadows.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="500">
                     <img src="./assets/images/endemicplants.png" alt="Endemic Plants" class="card-image">
                     <div class="card-content">
-                        <h3>Endemic Plants</h3>
-                        <p>Unique plant species found only in Kosovo's diverse ecosystems.</p>
+                        <h3 data-translate="endemic-plants">Endemic Plants</h3>
+                        <p data-translate="endemic-plants-desc">Unique plant species found only in Kosovo's diverse ecosystems.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="600">
                     <img src="./assets/images/medicinalplants.png" alt="Medicinal Plants" class="card-image">
                     <div class="card-content">
-                        <h3>Medicinal Plants</h3>
-                        <p>Traditional healing plants from Kosovo's mountains.</p>
+                        <h3 data-translate="medicinal-plants">Medicinal Plants</h3>
+                        <p data-translate="medicinal-plants-desc">Traditional healing plants from Kosovo's mountains.</p>
                     </div>
                 </div>
             </div>
-            <button class="see-more-btn" data-target="flora-extra">See More Flora</button>
+            <button class="see-more-btn" data-target="flora-extra" data-translate="see-more-flora">See More Flora</button>
         </div>
     </section>
 
     <!-- Wildlife Section -->
     <section class="info-section">
         <div class="info-container">
-            <h2 class="section-title wildlife-title" data-aos="fade-up" data-text="Wildlife">Wildlife</h2>
+            <h2 class="section-title wildlife-title" data-aos="fade-up" data-translate="wildlife-section">Wildlife</h2>
             <div class="info-grid initial-grid">
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="./assets/images/biodiversityeagle.png" alt="Eagles" class="card-image">
                     <div class="card-content">
-                        <h3>Eagles</h3>
-                        <p>Majestic birds of prey soaring through Kosovo's skies.</p>
+                        <h3 data-translate="eagles">Eagles</h3>
+                        <p data-translate="eagles-desc">Majestic birds of prey soaring through Kosovo's skies.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
                     <img src="./assets/images/biodiversitybrownbears.png" alt="Brown Bears" class="card-image">
                     <div class="card-content">
-                        <h3>Brown Bears</h3>
-                        <p>Powerful mammals inhabiting Kosovo's mountain forests.</p>
+                        <h3 data-translate="brown-bears">Brown Bears</h3>
+                        <p data-translate="brown-bears-desc">Powerful mammals inhabiting Kosovo's mountain forests.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
                     <img src="./assets/images/biodiversitywolves.png" alt="Wolves" class="card-image">
                     <div class="card-content">
-                        <h3>Wolves</h3>
-                        <p>Pack hunters maintaining balance in Kosovo's ecosystems.</p>
+                        <h3 data-translate="wolves">Wolves</h3>
+                        <p data-translate="wolves-desc">Pack hunters maintaining balance in Kosovo's ecosystems.</p>
                     </div>
                 </div>
             </div>
             <div class="info-grid hidden-grid wildlife-extra">
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="400">
                     <img src="./assets/images/biodiversitylynx.png" alt="Balkan Lynx" class="card-image">
                     <div class="card-content">
-                        <h3>Balkan Lynx</h3>
-                        <p>One of Europe's rarest wild cats, native to Kosovo's mountains.</p>
+                        <h3 data-translate="balkan-lynx">Balkan Lynx</h3>
+                        <p data-translate="balkan-lynx-desc">One of Europe's rarest wild cats, native to Kosovo's mountains.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="500">
                     <img src="./assets/images/horseshoebat.png" alt="Horseshoe Bat" class="card-image">
                     <div class="card-content">
-                        <h3>Horseshoe Bat</h3>
-                        <p>Nocturnal mammals inhabiting Kosovo's caves.</p>
+                        <h3 data-translate="horseshoe-bat">Horseshoe Bat</h3>
+                        <p data-translate="horseshoe-bat-desc">Nocturnal mammals inhabiting Kosovo's caves.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="600">
                     <img src="./assets/images/chamois.png" alt="Chamois" class="card-image">
                     <div class="card-content">
-                        <h3>Chamois</h3>
-                        <p>Agile mountain goats navigating Kosovo's steep terrain.</p>
+                        <h3 data-translate="chamois">Chamois</h3>
+                        <p data-translate="chamois-desc">Agile mountain goats navigating Kosovo's steep terrain.</p>
                     </div>
                 </div>
             </div>
-            <button class="see-more-btn" data-target="wildlife-extra">See More Wildlife</button>
+            <button class="see-more-btn" data-target="wildlife-extra" data-translate="see-more-wildlife">See More Wildlife</button>
         </div>
     </section>
 
-    <!-- Insects & Small Animals Section -->
+    <!-- Insects Section -->
     <section class="info-section">
         <div class="info-container">
-            <h2 class="section-title insects-title" data-aos="fade-up" data-text="Insects & Small Animals">Insects & Small Animals</h2>
+            <h2 class="section-title insects-title" data-aos="fade-up" data-translate="insects-section">Insects</h2>
             <div class="info-grid initial-grid">
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="./assets/images/biodiversitybutterfly.png" alt="Butterflies" class="card-image">
                     <div class="card-content">
-                        <h3>Butterflies</h3>
-                        <p>Colorful pollinators enriching Kosovo's biodiversity.</p>
+                        <h3 data-translate="butterflies">Butterflies</h3>
+                        <p data-translate="butterflies-desc">Colorful pollinators enriching Kosovo's biodiversity.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
                     <img src="./assets/images/biodiversityfoxes.png" alt="Red Foxes" class="card-image">
                     <div class="card-content">
-                        <h3>Red Foxes</h3>
-                        <p>Clever hunters adapting to various habitats.</p>
+                        <h3 data-translate="red-foxes">Red Foxes</h3>
+                        <p data-translate="red-foxes-desc">Clever hunters adapting to various habitats.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="300">
                     <img src="./assets/images/biodiversitysquirrels.png" alt="Squirrels" class="card-image">
                     <div class="card-content">
-                        <h3>Squirrels</h3>
-                        <p>Agile forest dwellers contributing to seed dispersal.</p>
+                        <h3 data-translate="squirrels">Squirrels</h3>
+                        <p data-translate="squirrels-desc">Agile forest dwellers contributing to seed dispersal.</p>
                     </div>
                 </div>
             </div>
             <div class="info-grid hidden-grid insects-extra">
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="400">
                     <img src="./assets/images/swallowtailbutterfly.png" alt="Swallowtail Butterfly" class="card-image">
                     <div class="card-content">
-                        <h3>Swallowtail Butterfly</h3>
-                        <p>Beautiful butterflies found in Kosovo's meadows.</p>
+                        <h3 data-translate="swallowtail">Swallowtail Butterfly</h3>
+                        <p data-translate="swallowtail-desc">Beautiful butterflies found in Kosovo's meadows.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="500">
                     <img src="./assets/images/caddisfly.png" alt="Endemic Caddisfly" class="card-image">
                     <div class="card-content">
-                        <h3>Endemic Caddisfly</h3>
-                        <p>Unique aquatic insects in Kosovo's streams.</p>
+                        <h3 data-translate="caddisfly">Endemic Caddisfly</h3>
+                        <p data-translate="caddisfly-desc">Unique aquatic insects in Kosovo's streams.</p>
                     </div>
                 </div>
-                <div class="info-card">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="600">
                     <img src="./assets/images/groundbeetle.png" alt="Ground Beetle" class="card-image">
                     <div class="card-content">
-                        <h3>Ground Beetle</h3>
-                        <p>Important predatory insects in Kosovo's forests.</p>
+                        <h3 data-translate="ground-beetle">Ground Beetle</h3>
+                        <p data-translate="ground-beetle-desc">Important predatory insects in Kosovo's forests.</p>
                     </div>
                 </div>
             </div>
-            <button class="see-more-btn" data-target="insects-extra">See More Insects & Animals</button>
+            <button class="see-more-btn" data-target="insects-extra" data-translate="see-more-insects">See More Insects & Small Animals</button>
         </div>
     </section>
 
